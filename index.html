@@ -1,4 +1,3 @@
-l>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -12,42 +11,38 @@ l>
 
         body {
             margin: 0;
+            padding: 0;
             width: 100vw;
             height: 100vh;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #f8d7da;
-			position: relative;
+            background: #f8d7da; /* Solo como respaldo si la imagen no carga */
         }
 
         #fondo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw; /* Ocupa todo el ancho de la pantalla */
-    height: 100vh; /* Ocupa todo el alto de la pantalla */
-    background: url('fondo.png') no-repeat center center;
-    background-size: cover; /* Muestra la imagen completa sin cortar */
-       }
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            object-fit: contain; /* Ajusta la imagen sin distorsión */
+        }
 
         #countdown {
-    font-family: 'Eminor Bold', sans-serif;
-    font-weight: bold;
-    font-size: 3.2vw; /* Escala el tamaño según la pantalla */
-    color: #63323d;
-    position: absolute;
-    top: 51.7%; /* Centra verticalmente */
-    left: 64.7%; /* Centra horizontalmente */
-    transform: translate(-50%, -50%); /* Asegura que el centro del texto esté bien alineado */
-    z-index: 2;
-}
-
+            position: absolute;
+            font-family: 'Eminor Bold', sans-serif;
+            font-weight: bold;
+            font-size: 3.2vw; /* Ajuste dinámico según el ancho de la pantalla */
+            color: #63323d;
+            top: 52%;
+            left: 64.5%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
     </style>
 </head>
 <body>
-    <div id="fondo"></div>
+    <img id="fondo" src="fondo.png" alt="Fondo San Valentín">
     <div id="countdown"></div>
 
     <script>
@@ -65,7 +60,7 @@ l>
         }
 
         actualizarCuentaRegresiva(); // Ejecutar al cargar
-        setInterval(actualizarCuentaRegresiva, 1000 * 60 * 60);
+        setInterval(actualizarCuentaRegresiva, 1000 * 60 * 60); // Actualizar cada hora
     </script>
 </body>
 </html>
