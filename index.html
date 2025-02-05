@@ -22,23 +22,23 @@ l>
         }
 
         #fondo {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 7923px; /* Ajusta según el tamaño del fondo */
-            height: 554px; /* Ajusta según el tamaño del fondo */
-            background: url('fondo.png') no-repeat center center;
-            background-size: cover;
-        }
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Ocupa todo el ancho de la pantalla */
+    height: 100vh; /* Ocupa todo el alto de la pantalla */
+    background: url('fondo.png') no-repeat center center;
+    background-size: contain; /* Muestra la imagen completa sin cortar */
+       }
 
         #countdown {
             font-family: 'Eminor Bold', sans-serif;
             font-weight: bold;
-            font-size: 244px; /* Ajusta el tamaño del número */
+            font-size: 180px; /* Ajusta el tamaño del número */
             color: #63323d;
             position: absolute;
-            top: 330px; /* Ajusta la posición vertical */
-            left: 5100px; /* Ajusta la posición horizontal */
+            top: 1240px; /* Ajusta la posición vertical */
+            left: 3530px; /* Ajusta la posición horizontal */
             transform: translate(-50%, -50%); /* Centra el número en su posición */
             z-index: 2; /* Asegura que esté encima del fondo */
         }
