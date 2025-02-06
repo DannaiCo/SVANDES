@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -9,40 +10,55 @@
             src: url('Eminor-Bold.ttf') format('truetype'); /* Asegúrate de que el archivo esté en la misma carpeta */
         }
 
-        body {
+        /* 🔹 Ajuste para evitar márgenes en la pantalla DOOH */
+        body, html {
             margin: 0;
             padding: 0;
+            width: 100vw;
+            height: 100vh;
             overflow: hidden;
-            background: #f8d7da; /* Color de respaldo */
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 100vw;
-            height: 100vh;
+            background: #f8d7da; /* Solo como respaldo si la imagen no carga */
         }
 
+        /* 🔹 Contenedor de la imagen de fondo */
         #contenedor {
-            width: 7922px;  /* Tamaño exacto de la pantalla */
-            height: 533px;
+            width: 7922px;  /* Ancho exacto de la pantalla */
+            height: 533px;   /* Alto exacto de la pantalla */
             position: relative;
             background: url('fondo.png') no-repeat center center;
-            background-size: 100% 100%; /* Ajusta la imagen sin distorsión */
+            background-size: 100% 100%; /* Se fuerza a llenar el espacio */
         }
 
+        /* 🔹 Opcional: Si prefieres usar una imagen en lugar de background */
+        #fondo {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* 🔹 Cuenta regresiva */
         #countdown {
             position: absolute;
             font-family: 'Eminor Bold', sans-serif;
             font-weight: bold;
-            font-size: 120px; /* Ajustar manualmente según la escala de la pantalla */
+            font-size: 3.2vw; /* Ajuste dinámico según el ancho de la pantalla */
             color: #63323d;
-            top: 50%; /* Ajusta según necesidad */
-            left: 64.5%; /* Ajusta según la imagen */
+            top: 52%;
+            left: 64.5%;
             transform: translate(-50%, -50%);
+            z-index: 2;
         }
     </style>
 </head>
 <body>
     <div id="contenedor">
+        <!-- Si usas imagen en lugar de background -->
+        <img id="fondo" src="fondo.png" alt="Fondo San Valentín">
         <div id="countdown"></div>
     </div>
 
