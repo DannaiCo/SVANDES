@@ -12,38 +12,39 @@
         body {
             margin: 0;
             padding: 0;
-            width: 100vw;
-            height: 100vh;
             overflow: hidden;
+            background: #f8d7da; /* Color de respaldo */
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #f8d7da; /* Solo como respaldo si la imagen no carga */
-        }
-
-        #fondo {
-            position: absolute;
             width: 100vw;
             height: 100vh;
-            object-fit: contain; /* Ajusta la imagen sin distorsión */
+        }
+
+        #contenedor {
+            width: 7922px;  /* Tamaño exacto de la pantalla */
+            height: 533px;
+            position: relative;
+            background: url('fondo.png') no-repeat center center;
+            background-size: cover; /* Ajusta la imagen sin distorsión */
         }
 
         #countdown {
             position: absolute;
             font-family: 'Eminor Bold', sans-serif;
             font-weight: bold;
-            font-size: 3.2vw; /* Ajuste dinámico según el ancho de la pantalla */
+            font-size: 120px; /* Ajustar manualmente según la escala de la pantalla */
             color: #63323d;
-            top: 52%;
-            left: 64.5%;
+            top: 50%; /* Ajusta según necesidad */
+            left: 64.5%; /* Ajusta según la imagen */
             transform: translate(-50%, -50%);
-            z-index: 2;
         }
     </style>
 </head>
 <body>
-    <img id="fondo" src="fondo.png" alt="Fondo San Valentín">
-    <div id="countdown"></div>
+    <div id="contenedor">
+        <div id="countdown"></div>
+    </div>
 
     <script>
         function actualizarCuentaRegresiva() {
